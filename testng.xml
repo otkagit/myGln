@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="suite 1" verbose="1" >
+  <test name="t001" ><classes><class name="tka.Test001"/></classes></test>
+  <test name="t002" ><classes><class name="tka.Test002"/></classes></test>
+  <test name="t003" ><classes><class name="tka.Test003"/></classes></test>
+  <test name="t004" ><classes><class name="tka.TestImage004"/></classes></test>
+</suite>
+
