@@ -29,7 +29,10 @@
 		</dependency>
 	</dependencies>
 
+
+
 	<build>
+
 		<plugins>
 
 			<plugin>
@@ -69,13 +72,28 @@
 						</property>
 
 					</properties>
+
+					<systemProperties>
+						<property>
+							<name>browser</name>
+							<value>${browser}</value>
+						</property>
+						<property>
+							<name>webdriver.chrome.driver</name>
+							<value>${webdriver.chrome.driver}</value>
+						</property>
+						<property>
+							<name>webdriver.gecko.driver</name>
+							<value>${webdriver.gecko.driver}</value>
+						</property>
+					</systemProperties>
+					
 				</configuration>
 
 				<!-- <artifactId>maven-surefire-plugin</artifactId> <configuration> <suiteXmlFiles> 
 					<suiteXmlFile>test-suite/testng.xml</suiteXmlFile> </suiteXmlFiles> <argLine>-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar 
 					-Xmx1024m -XX:MaxPermSize=512m -Xms256m -Xmx1024m -XX:PermSize=128m -Dversion=${project.version} 
-					</argLine> 
-					<systemPropertyVariables> <foo>${foo.value}</foo> </systemPropertyVariables> 
+					</argLine> <systemPropertyVariables> <foo>${foo.value}</foo> </systemPropertyVariables> 
 					<environmentVariables> <bar>${bar.value}</bar> </environmentVariables> </configuration> -->
 
 
@@ -87,9 +105,27 @@
 
 	</build>
 
+	<profiles>
+		<profile>
+			<id>t_cr</id>
+			<properties>
+				<browser>chrome</browser>
+			</properties>
 
+		</profile>
 
+		<profile>
+			<id>t_ff</id>
+			<properties>
+				<browser>firefox</browser>
+			</properties>
+		</profile>
+	</profiles>
 
+	<properties>
+		<webdriver.gecko.driver>/Users/Olena/Documents/Projekte/JAVA/geckodriver</webdriver.gecko.driver>
+		<webdriver.chrome.driver>/Users/Olena/Documents/Projekte/JAVA/chromedriver</webdriver.chrome.driver>
+	</properties>
 
 
 </project>
